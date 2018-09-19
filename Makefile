@@ -1,4 +1,5 @@
 PACKAGES=$(shell go list ./... | grep -v /vendor/)
 
-protos:
+all:
 	protobuild --quiet ${PACKAGES}
+	go install . ./...

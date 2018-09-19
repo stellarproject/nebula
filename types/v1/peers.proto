@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package io.stellarproject.types.v1;
+
+import weak "gogoproto/gogo.proto";
+import "google/protobuf/any.proto";
+import "google/protobuf/timestamp.proto";
+
+enum PeerType {
+	option (gogoproto.goproto_enum_prefix) = false;
+	option (gogoproto.enum_customname) = "PeerType";
+
+	AGENT = 0 [(gogoproto.enumvalue_customname) = "Agent"];
+	PROXY = 1 [(gogoproto.enumvalue_customname) = "Proxy"];
+	DNS = 2 [(gogoproto.enumvalue_customname) = "DNS"];
+}
+
+message Memeber {
+	Peer self = 1;
+	google.protobuf.Timestamp updated = 2 [(gogoproto.stdtime) = true, (gogoproto.nullable) = false];
+	map<string, Peer> peers = 3;
+}
+
+message Peer {
+	string id = 1 [(gogoproto.customname) = "ID"];
+	PeerType type = 2;
+	string address = 3;
+	map<string, string> labels = 4;
+	google.protobuf.Any payload = 5;
+}
