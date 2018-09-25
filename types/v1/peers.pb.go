@@ -47,7 +47,7 @@ func (x PeerType) String() string {
 	return proto.EnumName(PeerType_name, int32(x))
 }
 func (PeerType) EnumDescriptor() ([]byte, []int) {
-	return fileDescriptor_peers_58157bfc22360d9e, []int{0}
+	return fileDescriptor_peers_d554b6b5f93f9686, []int{0}
 }
 
 type Memeber struct {
@@ -63,7 +63,7 @@ func (m *Memeber) Reset()         { *m = Memeber{} }
 func (m *Memeber) String() string { return proto.CompactTextString(m) }
 func (*Memeber) ProtoMessage()    {}
 func (*Memeber) Descriptor() ([]byte, []int) {
-	return fileDescriptor_peers_58157bfc22360d9e, []int{0}
+	return fileDescriptor_peers_d554b6b5f93f9686, []int{0}
 }
 func (m *Memeber) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Memeber.Unmarshal(m, b)
@@ -119,7 +119,7 @@ func (m *Peer) Reset()         { *m = Peer{} }
 func (m *Peer) String() string { return proto.CompactTextString(m) }
 func (*Peer) ProtoMessage()    {}
 func (*Peer) Descriptor() ([]byte, []int) {
-	return fileDescriptor_peers_58157bfc22360d9e, []int{1}
+	return fileDescriptor_peers_d554b6b5f93f9686, []int{1}
 }
 func (m *Peer) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_Peer.Unmarshal(m, b)
@@ -183,10 +183,10 @@ func init() {
 }
 
 func init() {
-	proto.RegisterFile("github.com/stellarproject/nebula/types/v1/peers.proto", fileDescriptor_peers_58157bfc22360d9e)
+	proto.RegisterFile("github.com/stellarproject/nebula/types/v1/peers.proto", fileDescriptor_peers_d554b6b5f93f9686)
 }
 
-var fileDescriptor_peers_58157bfc22360d9e = []byte{
+var fileDescriptor_peers_d554b6b5f93f9686 = []byte{
 	// 473 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x51, 0xcb, 0x6e, 0xd3, 0x40,
 	0x14, 0x8d, 0x9d, 0x87, 0x9b, 0x89, 0x84, 0xac, 0x51, 0x84, 0xcc, 0x2c, 0x1a, 0xab, 0x62, 0x51,
