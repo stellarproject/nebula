@@ -28,6 +28,9 @@ service Agent {
 	rpc Checkpoint(CheckpointRequest) returns (CheckpointResponse);
 	rpc Restore(RestoreRequest) returns (RestoreResponse);
 	rpc Migrate(MigrateRequest) returns (MigrateResponse);
+
+        // terra
+        rpc Apply(ApplyRequest) returns (google.protobuf.Empty);
 }
 
 message CreateRequest {
@@ -193,4 +196,13 @@ message Process {
 message User {
 	uint32 uid = 1;
 	uint32 gid = 2;
+}
+
+message Assembly {
+        string name = 1;
+        string image = 2;
+}
+
+message ApplyRequest {
+        repeated Assembly assemblies = 1;
 }
