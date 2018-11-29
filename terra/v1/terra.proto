@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package io.stellarproject.terra.v1;
+
+import weak "gogoproto/gogo.proto";
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/stellarproject/nebula/terra/v1;v1";
+
+service Terra {
+	rpc List(ListRequest) returns (ListResponse);
+	rpc Apply(ApplyRequest) returns (google.protobuf.Empty);
+}
+
+message ListRequest {}
+
+message ListResponse {
+        repeated Assembly assemblies = 1;
+}
+
+message Assembly {
+        string image = 1;
+}
+
+message Manifest {
+        repeated string targets = 1;
+        repeated Assembly assemblies = 2;
+}
+
+message ApplyRequest {
+        repeated Manifest manifests = 1;
+}
