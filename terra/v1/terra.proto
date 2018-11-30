@@ -15,7 +15,7 @@ service Terra {
 message ListRequest {}
 
 message ListResponse {
-        repeated Assembly assemblies = 1;
+        repeated Manifest manifests = 1;
 }
 
 message Assembly {
@@ -23,7 +23,7 @@ message Assembly {
 }
 
 message Manifest {
-        repeated string targets = 1;
+	string node_id = 1 [(gogoproto.customname) = "NodeID"];;
         repeated Assembly assemblies = 2;
 }
 
