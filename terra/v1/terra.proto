@@ -25,7 +25,8 @@ message Assembly {
 
 message Manifest {
 	string node_id = 1 [(gogoproto.customname) = "NodeID"];
-        repeated Assembly assemblies = 2;
+	map<string, string> labels = 2;
+        repeated Assembly assemblies = 3;
 }
 
 message ManifestList {
