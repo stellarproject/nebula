@@ -12,6 +12,7 @@ service Terra {
 	rpc List(ListRequest) returns (ListResponse);
 	rpc Apply(ApplyRequest) returns (google.protobuf.Empty);
         rpc Nodes(NodesRequest) returns (NodesResponse);
+        rpc Status(StatusRequest) returns (StatusResponse);
 }
 
 message ListRequest {}
@@ -49,4 +50,21 @@ message Node {
 
 message NodesResponse {
         repeated Node nodes = 1;
+}
+
+message StatusRequest {}
+
+message NodeStatus {
+        enum Status {
+                UNKNOWN = 0;
+                OK = 1;
+                UPDATING = 2;
+                FAILURE = 3;
+        }
+        Status status = 1;
+        string description = 2;
+}
+
+message StatusResponse {
+        NodeStatus status = 1;
 }
