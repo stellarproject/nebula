@@ -61,10 +61,11 @@ message NodeStatus {
                 UPDATING = 2;
                 FAILURE = 3;
         }
-        Status status = 1;
-        string description = 2;
+	string node_id = 1 [(gogoproto.customname) = "NodeID"];
+        Status status = 2;
+        string description = 3;
 }
 
 message StatusResponse {
-        NodeStatus node_status = 1;
+        repeated NodeStatus nodes = 1;
 }
