@@ -67,5 +67,5 @@ message NodeStatus {
 }
 
 message StatusResponse {
-        repeated NodeStatus nodes = 1;
+        NodeStatus node_status = 1;
 }
