@@ -46,6 +46,7 @@ message Node {
         string id = 1 [(gogoproto.customname) = "ID"];
         string address = 2;
         map<string, string> labels = 3;
+        NodeStatus status = 4;
 }
 
 message NodesResponse {
@@ -61,9 +62,8 @@ message NodeStatus {
                 UPDATING = 2;
                 FAILURE = 3;
         }
-	string node_id = 1 [(gogoproto.customname) = "NodeID"];
-        Status status = 2;
-        string description = 3;
+        Status status = 1;
+        string description = 2;
 }
 
 message StatusResponse {
