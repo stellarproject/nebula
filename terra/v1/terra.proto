@@ -66,5 +66,5 @@ message NodeStatus {
 }
 
 message StatusResponse {
-        NodeStatus status = 1;
+        NodeStatus node_status = 1;
 }
