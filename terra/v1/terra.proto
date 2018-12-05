@@ -23,6 +23,7 @@ message ListResponse {
 
 message Assembly {
         string image = 1;
+        repeated string requires = 2;
 }
 
 message Manifest {
