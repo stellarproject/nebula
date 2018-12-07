@@ -39,7 +39,6 @@ message ManifestList {
 
 message ApplyRequest {
         ManifestList manifest_list = 1;
-        bool force = 2;
 }
 
 message NodesRequest {}
