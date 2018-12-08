@@ -24,6 +24,7 @@ message ListResponse {
 message Assembly {
         string image = 1;
         repeated string requires = 2;
+        map<string, string> parameters = 3;
 }
 
 message Manifest {
