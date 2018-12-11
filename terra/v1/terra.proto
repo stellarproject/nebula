@@ -19,6 +19,8 @@ service Terra {
         rpc Status(StatusRequest) returns (StatusResponse);
         // Update updates the current manifest list for the cluster
         rpc Update(UpdateRequest) returns (google.protobuf.Empty);
+        // Version reports the version of terra
+        rpc Version(VersionRequest) returns (VersionResponse);
 }
 
 message ListRequest {}
@@ -82,4 +84,10 @@ message StatusResponse {
 message UpdateRequest {
         ManifestList manifest_list = 1;
         bool force = 2;
+}
+
+message VersionRequest {}
+
+message VersionResponse{
+        string version = 1;
 }
