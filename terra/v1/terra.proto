@@ -58,6 +58,7 @@ message Node {
         string address = 2;
         map<string, string> labels = 3;
         NodeStatus status = 4;
+        string version = 5;
 }
 
 message NodesResponse {
