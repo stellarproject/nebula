@@ -21,6 +21,8 @@ service Terra {
         rpc Update(UpdateRequest) returns (google.protobuf.Empty);
         // Version reports the version of terra
         rpc Version(VersionRequest) returns (VersionResponse);
+        // RebootNode reboots the specified node
+        rpc RebootNode(RebootRequest) returns (google.protobuf.Empty);
 }
 
 message ListRequest {}
@@ -92,3 +94,5 @@ message VersionRequest {}
 message VersionResponse{
         string version = 1;
 }
+
+message RebootRequest {}
